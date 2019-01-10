@@ -1,4 +1,4 @@
-tableextension 50020 "DXCAsmToOrderLinkExt" extends "Assemble-to-Order Link" //MyTargetTableId
+tableextension 50022 "DXCAsmToOrderLinkExt" extends "Assemble-to-Order Link" //MyTargetTableId
 {
     fields
     {
