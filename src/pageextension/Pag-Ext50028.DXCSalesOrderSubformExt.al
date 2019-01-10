@@ -1,4 +1,4 @@
-pageextension 50028 DXCSalesOrderSubformExt extends "Sales Order Subform" //MyTargetPageId
+pageextension 50028 "DXCSalesOrderSubformExt" extends "Sales Order Subform" //MyTargetPageId
 {
     layout
     {

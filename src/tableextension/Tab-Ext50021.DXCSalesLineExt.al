@@ -1,4 +1,4 @@
-tableextension 50021 DXCSalesLineExt extends "Sales Line" //MyTargetTableId
+tableextension 50021 "DXCSalesLineExt" extends "Sales Line" //MyTargetTableId
 {
       fields
     {
