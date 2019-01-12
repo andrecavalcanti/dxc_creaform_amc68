@@ -66,6 +66,7 @@ tableextension 50022 "DXCAsmToOrderLinkExt" extends "Assemble-to-Order Link" //M
         INSERT;
         AsmHeaderDXC."Shortcut Dimension 1 Code" := NewSalesLine."Shortcut Dimension 1 Code";
         AsmHeaderDXC."Shortcut Dimension 2 Code" := NewSalesLine."Shortcut Dimension 2 Code";
+        AsmHeaderDXC."Assembly To Stock" := true;
         AsmHeaderDXC.MODIFY(true);
 
         //OnAfterUpdateAsm(AsmHeader);

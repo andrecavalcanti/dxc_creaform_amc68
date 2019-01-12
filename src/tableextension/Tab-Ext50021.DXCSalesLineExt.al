@@ -13,9 +13,12 @@ tableextension 50021 "DXCSalesLineExt" extends "Sales Line" //MyTargetTableId
                 SalesLineReserve : Codeunit "Sales Line-Reserve";
             begin
                 // DXC
+                "Qty. to Assemble to Order" :=  "Qty. to Assemble to Stock";
+                
                 WhseValidateSourceLine.SalesLineVerifyChange(Rec,xRec);
-
+                
                 "Qty. to Asm. to Stock (Base)" := CalcBaseQty("Qty. to Assemble to Stock");
+                "Qty. to Asm. to Order (Base)" := CalcBaseQty("Qty. to Assemble to Stock");
 
                 if "Qty. to Asm. to Stock (Base)" <> 0 then begin
                   Rec.TESTFIELD("Drop Shipment",false);

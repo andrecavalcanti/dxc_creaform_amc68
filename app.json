@@ -19,5 +19,8 @@
   "idRange": {
     "from": 50000,
     "to": 50149
-  }
+  },
+  "showMyCode": true,
+  "breakonerror" : true,
+  "runtime": "1.0"
 }

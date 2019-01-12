@@ -2,7 +2,7 @@ pageextension 50028 "DXCSalesOrderSubformExt" extends "Sales Order Subform" //My
 {
     layout
     {
-           // >> AMC-68
+        // >> AMC-68
         addafter("Qty. to Assemble to Order")
         {
             field("Qty. to Assemble to Stock";"Qty. to Assemble to Stock")
@@ -16,6 +16,11 @@ pageextension 50028 "DXCSalesOrderSubformExt" extends "Sales Order Subform" //My
             }  
 
         } 
+        modify("Qty. to Assemble to Order")
+        {
+            Visible = false;
+            Enabled = false;   
+        }
         // << AMC-68     
         
     }
