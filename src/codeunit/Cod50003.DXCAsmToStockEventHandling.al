@@ -8,4 +8,10 @@ codeunit 50003 "DXCAsmToStockEventHandling"
             AssembleToStock   := true;         
     end;    */
     
+    [EventSubscriber(ObjectType::Table, 900, 'IsAsmToStock', '', false, false)]
+    local procedure HandleIsAsmToStockOnAsmHeader(AssemblyHeader : Record "Assembly Header"; var AsmToStock : Boolean);
+    begin
+        if AssemblyHeader."Assembly To Stock" then
+            AsmToStock := true;           
+    end;    
 }
