@@ -196,8 +196,8 @@ codeunit 50004 "DXCSalesOrderAssembleToStock"
         //IF Type = Type::Sale THEN BEGIN
         //  GetAsmHeader;
 
-          AsmHeaderReserve.SetBinding(ReservEntry.Binding::"Order-to-Order");
-          AsmHeaderReserve.SetDisallowCancellation(true);
+          //AsmHeaderReserve.SetBinding(ReservEntry.Binding::"Order-to-Order");
+          //AsmHeaderReserve.SetDisallowCancellation(true);
           TrackingSpecification.InitTrackingSpecification2(
             DATABASE::"Sales Line",SalesLine."Document Type",SalesLine."Document No.",'',0,SalesLine."Line No.",
             AsmHeader."Variant Code",AsmHeader."Location Code",AsmHeader."Qty. per Unit of Measure");
