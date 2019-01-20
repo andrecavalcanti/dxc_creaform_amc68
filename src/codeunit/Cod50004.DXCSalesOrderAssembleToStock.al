@@ -37,6 +37,7 @@ codeunit 50004 "DXCSalesOrderAssembleToStock"
         Window : Dialog;
         QtyTracked : Decimal;
         QtyTrackedBase : Decimal;
+        Location : Record Location;
     begin
         //GetAsmHeader;
 
@@ -58,9 +59,11 @@ codeunit 50004 "DXCSalesOrderAssembleToStock"
         SalesHeader.GET(NewSalesLine."Document Type",NewSalesLine."Document No.");
         AsmHeader.SetWarningsOff;
         ChangeItem(NewSalesLine."No.");
-        ChangeLocation(NewSalesLine."Location Code");
+        Location.Get(NewSalesLine."Location Code");
+        ChangeLocation(NewSalesLine."Location Code");        
         ChangeVariant(NewSalesLine."Variant Code");
-        ChangeBinCode(NewSalesLine."Bin Code");
+        //ChangeBinCode(NewSalesLine."Bin Code");
+        ChangeBinCode(Location."From-Assembly Bin Code");
         ChangeUOM(NewSalesLine."Unit of Measure Code");
         ChangeDate(NewSalesLine."Shipment Date");
         ChangePostingDate(SalesHeader."Posting Date");
@@ -69,7 +72,8 @@ codeunit 50004 "DXCSalesOrderAssembleToStock"
         ChangeQty(NewSalesLine."Qty. to Assemble to Stock");
         if NewSalesLine."Document Type" <> NewSalesLine."Document Type"::Quote then
           //ChangeQtyToAsm(MaxQtyToAsm(NewSalesLine,AsmHeader));
-          ChangeQtyToAsm(NewSalesLine."Qty. to Assemble to Stock");
+          ChangeQtyToAsm(NewSalesLine."Qty. to Assemble to Stock");        
+        
 
         AsmHeader."Sales Order No." := NewSalesLine."Document No.";
         AsmHeader."Sales Order Line No." := NewSalesLine."Line No.";
